@@ -1,0 +1,43 @@
+@import 'normalize';
+@import 'variables';
+  
+body {
+    box-sizing: border-box;
+}
+ 
+header div {
+    float: left;
+    width: 20%;
+    background-color: $default-Color;
+} 
+
+main > div {
+  float: left;
+  width: 20%;
+  background-color: $second-Color; 
+
+}
+
+#entry-panel {
+    float: none;
+    position: absolute;
+    background-color: $color3;
+    height: 500px;
+    width: 400px;
+    left: 20px;
+    top: 50px
+}
+
+#entry-panel > div {
+    padding: 20px 0px
+}
+#entry-panel input {
+    display:block; 
+    height: 2em;
+}
+
+.cf,
+.cf:before {
+    content: '';
+    clear:both;
+}
