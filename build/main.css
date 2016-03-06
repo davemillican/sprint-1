@@ -354,6 +354,7 @@ th {
   padding: 0; }
 
 body {
+  font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box; }
 
 header div {
@@ -361,10 +362,88 @@ header div {
   width: 20%;
   background-color: #c8c86e; }
 
-main > div {
+.hold {
   float: left;
   width: 20%;
   background-color: #64c86e; }
+
+.fields-block {
+  width: 100%; }
+
+.fields-block * {
+  float: left;
+  width: 20%;
+  padding: 0 auto;
+  background-color: #64c86e; }
+
+.title_spec {
+  width: 50%; }
+  @media (min-width: 500px) {
+    .title_spec {
+      width: 50%; } }
+  @media (min-width: 800px) {
+    .title_spec {
+      width: 15%; } }
+
+.sev_spec {
+  width: 50%; }
+  @media (min-width: 500px) {
+    .sev_spec {
+      width: 20%; } }
+  @media (min-width: 800px) {
+    .sev_spec {
+      width: 5%; } }
+
+.state_spec {
+  width: 100%; }
+  @media (min-width: 500px) {
+    .state_spec {
+      width: 30%; } }
+  @media (min-width: 800px) {
+    .state_spec {
+      width: 10%; } }
+
+.desc_spec {
+  width: 100%; }
+  @media (min-width: 500px) {
+    .desc_spec {
+      width: 100%; } }
+  @media (min-width: 800px) {
+    .desc_spec {
+      width: 35%; } }
+
+.owner_spec {
+  width: 100%; }
+  @media (min-width: 500px) {
+    .owner_spec {
+      width: 33.33333%; } }
+  @media (min-width: 800px) {
+    .owner_spec {
+      width: 10%; } }
+
+.date_spec {
+  width: 100%; }
+  @media (min-width: 500px) {
+    .date_spec {
+      width: 33.33333%; } }
+  @media (min-width: 800px) {
+    .date_spec {
+      width: 10%; } }
+
+header {
+  opacity: 0; }
+  @media (min-width: 800px) {
+    header {
+      opacity: 1; } }
+
+.release_spec {
+  width: 100%; }
+  @media (min-width: 500px) {
+    .release_spec {
+      width: 33.33333%; } }
+  @media (min-width: 800px) {
+    .release_spec {
+      width: 15%; } }
 
 #entry-panel {
   float: none;
@@ -373,14 +452,22 @@ main > div {
   height: 500px;
   width: 400px;
   left: 20px;
-  top: 50px; }
+  top: 50px;
+  border: 2px solid black; }
 
 #entry-panel > div {
-  padding: 20px 0px; }
+  padding: 20px 10px; }
 
 #entry-panel input {
   display: block;
   height: 2em; }
+
+#toggle-box {
+  position: fixed;
+  left: 95%;
+  width: 5%;
+  background-color: red;
+  top: 0; }
 
 .cf,
 .cf:before {
