@@ -29,6 +29,7 @@
     var toggleBox = document.querySelector("#toggle-box");
     var totalBugs = document.querySelector("#total-bugs");
     var totalSev1Bugs = document.querySelector("#total-sev1");
+    var filterButton = document.querySelector("#filter-button");
 
     function updateDisplay (newBug) {
         var el = document.createElement ("div");
@@ -64,6 +65,7 @@
     }
 
     function addBugToList (bug) {
+        bug.index = storage.length;
         storage.push(bug);
         updateDisplay(bug);
         updateStats(storage);
@@ -71,6 +73,12 @@
 
 
     function displayAll(arr) {
+
+        while (listView.children.length > 0) {
+            listView.removeChild(listView.children[0]);
+        }
+
+        console.log( "length " + listView.children.length);
 
         arr.forEach (function (item) {
             updateDisplay (item);
@@ -91,11 +99,9 @@
         
     });
 
-    function clearChildren() {
-
-    }
 
     var flag = 1;
+
     toggleBox.addEventListener("click", function (e) {
         if (flag === 1) {
             entryPanel.classList.add("invisible");
@@ -107,7 +113,29 @@
 
     });
 
+    var filterFlag = true;
+
+  
+    filterButton.addEventListener('click', function(e) {
+        var filtered;
+
+        if (filterFlag === true ) {
+            filtered = storage.filter(function(item) {
+                return (item.severity === "1" );
+            }); 
+
+            displayAll(filtered);
+            filterFlag = false;
+
+        } else {
+
+            displayAll(storage);
+            filterFlag = true;
+
+        }
+    });
+
     displayAll (storage);
-    
+
 })();
 

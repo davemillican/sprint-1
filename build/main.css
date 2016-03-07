@@ -498,7 +498,8 @@ footer {
   top: 50px;
   border: 2px solid black;
   padding: 10px;
-  border-radius: 10%; }
+  border-radius: 10%;
+  transition: all linear 300ms; }
 
 #entry-panel > div {
   padding: 0 10px; }
