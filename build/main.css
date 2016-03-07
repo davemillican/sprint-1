@@ -483,7 +483,7 @@ footer {
   background-color: #64c86e; }
 
 #entry-panel.invisible {
-  opacity: 0; }
+  transform: translateX(-200%); }
 
 #entry-panel {
   float: none;
@@ -498,8 +498,7 @@ footer {
   top: 50px;
   border: 2px solid black;
   padding: 10px;
-  border-radius: 10%;
-  transition: all linear 500ms; }
+  border-radius: 10%; }
 
 #entry-panel > div {
   padding: 0 10px; }

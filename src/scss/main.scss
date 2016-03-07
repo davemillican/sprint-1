@@ -188,7 +188,7 @@ footer {
 }
 
 #entry-panel.invisible {
-        opacity: 0;
+    transform: translateX(-200%);
 }
 
 #entry-panel {
@@ -206,7 +206,6 @@ footer {
     border: 2px solid black;
     padding: 10px;
     border-radius: 10%;
-    transition: all linear 500ms
 
 }
 
