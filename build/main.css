@@ -357,13 +357,25 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   box-sizing: border-box; }
 
+main {
+  background-color: #c8c86e; }
+
+#topper {
+  background-color: #3c3c3c;
+  color: white;
+  font-size: 40px;
+  height: 70px;
+  text-align: center;
+  padding-top: 3%; }
+
 header div {
   float: left;
-  width: 20%;
+  font-weight: bolder;
   background-color: #c8c86e; }
 
 #list-view * {
-  margin: 0; }
+  margin: 2px 0;
+  background-color: #c8c86e; }
 
 #sev-radio * {
   float: left; }
@@ -384,7 +396,7 @@ header div {
   float: left;
   width: 20%;
   padding: 0 auto;
-  background-color: #64c86e; }
+  background-color: #c8c86e; }
 
 .sev-tag {
   width: auto; }
@@ -409,7 +421,7 @@ header div {
       width: 20%; } }
   @media (min-width: 800px) {
     .sev_spec {
-      width: 5%; } }
+      width: 10%; } }
 
 .state_spec {
   width: 100%; }
@@ -427,7 +439,7 @@ header div {
       width: 100%; } }
   @media (min-width: 800px) {
     .desc_spec {
-      width: 25%; } }
+      width: 35%; } }
 
 .owner_spec {
   width: 100%; }
@@ -445,7 +457,7 @@ header div {
       width: 33.33333%; } }
   @media (min-width: 800px) {
     .date_spec {
-      width: 20%; } }
+      width: 10%; } }
 
 .release_spec {
   width: 100%; }
@@ -454,17 +466,24 @@ header div {
       width: 33.33333%; } }
   @media (min-width: 800px) {
     .release_spec {
-      width: 15%; } }
+      width: 10%; } }
 
 header {
-  opacity: 0; }
+  display: none; }
   @media (min-width: 800px) {
     header {
-      opacity: 1; } }
+      display: block; } }
+
+.footer-wrapper {
+  background-color: #64c86e; }
 
 footer {
   height: 100px;
-  background-color: #c8c86e; }
+  padding-left: 10px;
+  background-color: #64c86e; }
+
+#entry-panel.invisible {
+  opacity: 0; }
 
 #entry-panel {
   float: none;
@@ -472,11 +491,15 @@ footer {
   background-color: #ccff66;
   height: 500px;
   width: 400px;
-  left: 20px;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   top: 50px;
   border: 2px solid black;
   padding: 10px;
-  border-radius: 10%; }
+  border-radius: 10%;
+  transition: all linear 500ms; }
 
 #entry-panel > div {
   padding: 0 10px; }
@@ -487,8 +510,9 @@ footer {
 
 #entry-panel > button {
   position: absolute;
-  left: 85%;
-  top: 90%; }
+  height: 40px;
+  left: 80%;
+  top: 85%; }
 
 textarea {
   width: 100%;
