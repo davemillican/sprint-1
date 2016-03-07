@@ -29,24 +29,48 @@ header div {
     background-color: $default-Color;
 } 
 
-//#list-view > div {
-.hold {
-  float: left;
-  width: 20%;
-  background-color: $second-Color; 
 
+#list-view * {
+    margin: 0;
+}
+
+
+
+#sev-radio * {
+    float: left;
+}
+
+#sev {
+    display: inline;
+}
+
+#t1 {
+    display: inline;
 }
 
 .fields-block  {
     width: 100%;
+    border: 2px solid black;
+    height: 100%;
+    overflow: auto;
 }
 
 .fields-block  * {
     float:left;
     width: 20%;
     padding: 0 auto;
-    background-color: $second-Color; 
+    background-color: $second-Color;
+
     
+}
+
+.sev-tag {
+    width: auto;
+    @include large {
+        width: 0;
+        overflow: hidden;
+    }
+
 }
 
 .title_spec {
@@ -79,7 +103,8 @@ header div {
     
     @include large {
         @include column (1, 10);
-    }}
+    }
+}
 
 .desc_spec {
     width: 100%;
@@ -88,8 +113,9 @@ header div {
     }
     
     @include large {
-        @include column (7, 20);
-    }}
+        @include column (5, 20);
+    }
+}
 
 .owner_spec {
     width: 100%;
@@ -99,7 +125,8 @@ header div {
     
     @include large {
         @include column (1, 10);
-    }}
+    }
+}
 
 .date_spec {
     width: 100%;
@@ -108,15 +135,11 @@ header div {
     }
     
     @include large {
-        @include column (1, 10);
-    }}
-
-header {
-    opacity: 0;
-    @include large {
-        opacity: 1;
+        @include column (2, 10);
     }
 }
+
+
 .release_spec {
     width: 100%;
     @include med {
@@ -125,8 +148,20 @@ header {
     
     @include large {
         @include column (3, 20);
-    }}
+    }
+}
 
+header {
+    opacity: 0;
+    @include large {
+        opacity: 1;
+    }
+}
+
+footer {
+    height: 100px;
+    background-color: $default-Color;
+}
 
 #entry-panel {
     float: none;
@@ -137,10 +172,13 @@ header {
     left: 20px;
     top: 50px;
     border: 2px solid black;
+    padding: 10px;
+    border-radius: 10%;
+
 }
 
 #entry-panel > div {
-    padding: 20px 10px;
+    padding: 0 10px;
 }
 
 #entry-panel input {
@@ -148,12 +186,26 @@ header {
     height: 2em;
 }
 
+#entry-panel > button {
+    position: absolute;
+    left: 85%;
+    top: 90%;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
 #toggle-box {
     position: fixed;
-    left: 95%;
-    width: 5%;
-    background-color: red;
-    top: 0;
+    top: 85%;
+    left: 85%;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(10,10,10);
+    border-radius: 50%;
+    color: rgb(200,200,200);
 }
 
 .cf,

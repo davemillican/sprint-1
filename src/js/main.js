@@ -8,7 +8,11 @@ var newTitle = document.querySelector("#title");
 var newSeverity = document.querySelector("#severity");
 var newState = document.querySelector("#state");
 var newDescription = document.querySelector("#description");
+var newOwner = document.querySelector("#owner");
+var newRelease = document.querySelector("#release");
 var toggleBox = document.querySelector("#toggle-box");
+var totalBugs = document.querySelector("#total-bugs");
+var totalSev1Bugs = document.querySelector("#total-sev1");
 
 function updateDisplay (newBug) {
     var el = document.createElement ("div");
@@ -18,7 +22,9 @@ function updateDisplay (newBug) {
 
     el.innerHTML = 
         "<p class='title_spec'>" + newBug.title + "</p>" +
-        "<p class='sev_spec'>"  + newBug.severity + "</p>" +
+        "<div class='sev_spec'> <p class='sev-tag'>Severity: </p>" +
+            "<p>"  + newBug.severity + "</p>" +
+        "</div>" +
         "<p class='state_spec'>" + newBug.state + "</p>" +
         "<p class='desc_spec'>" + newBug.description + "</p>" +
         "<p class='owner_spec'>" + newBug.owner + "</p>" +
@@ -29,10 +35,22 @@ function updateDisplay (newBug) {
     listView.appendChild(el);
 }
 
+function updateStats (array) {
+    totalBugs.textContent = array.length;
+    totalSev1Bugs.textContent = array.reduce (function (a,b) {
+        if (parseInt(b.severity) === 1 ) {
+            return a + 1;
+        } else {
+            return a;
+        }
+
+    },0);
+}
 
 function addBugToList (bug) {
     storage.push(bug);
     updateDisplay(bug);
+    updateStats(storage);
 }
 
 
@@ -43,9 +61,9 @@ submit.addEventListener("click", function (e) {
         severity: newSeverity.value,
         state: newState.value,
         description: newDescription.value,
-        owner: "placeholder",
-        date: "placeholder",
-        release: "version 2.5.3"
+        owner: newOwner.value,
+        date: new Date().toDateString(),
+        release: newRelease.value
     });
     
 });

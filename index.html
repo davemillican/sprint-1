@@ -5,52 +5,55 @@
     <link rel="stylesheet" type="text/css" href="build/main.css">
 </head>
 <body>
-    <main>
+    <main class ="cf">
         <header>
-            <div>Title</div>
-            <div>Severity</div>
-            <div>State</div>
-            <div>Description</div>
-            <div>Owner</div>
+            <div class="title_spec">Title</div>
+            <div class="sev_spec">Severity</div>
+            <div class="state_spec">State</div>
+            <div class="desc_spec">Description</div>
+            <div class="owner_spec">Owner</div>
+            <div class="date_spec">Date</div>
+            <div class="release_spec">Release</div>
         </header>
-        <div id="list-view">
-            <div class="fields-block">
-                <div>Blue Screen</div>
-                <div>2</div>
-                <div>Open</div>
-                <div>This is a failure. Hard to reproduce. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip  
-            </div>
-        </div>
-        </div>
+        <div id="list-view"></div>
 
         <div id="entry-panel" class="cf">
             <div>
                 <label for="title">Title</label>
-                <input id="title"></input>
+                <input id="title">
             </div>
+
             <div>
-                <label for="severity">Severity</label>Do a radio here
-                <input id="severity"></input>
+                <label for="severity">Severity</label>
+                <input id="severity">
             </div>
             <div>
                 <label for="state">State</label>
-                <input id="state">do a dropdown here</input>
+                <input id="state">
             </div>
             <div>
                 <label for="description">Description</label>
                 <textarea id="description"></textarea> 
             </div>
-            <button>submit</button>
             <div>
                 <label for="owner">owner</label>
-                <input id="owner"></input>
+                <input id="owner">
             </div>
+            <div>
+                <label for="release">Release</label>
+                <input id="release">
+            </div>
+
+            <button>submit</button>
+
         </div>
 
         <button id="toggle-box">Toggle</button>
     </main>
+    <footer>Statistics:
+        <p>Number of Bugs: <span id="total-bugs"></span></p>
+        <p>Number of Sev 1 Bugs: <span id="total-sev1"></span></p>
+    </footer>
     <script type="text/javascript" src="src/js/main.js"></script>
 </body>
 </html>
