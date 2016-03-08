@@ -77,19 +77,33 @@
         errorElement.setAttribute ('data-msg','Input is Invalid');
     }
 
+    function lookupError(entry) {
+        lookup = { 
+            title: newTitle,
+            severity: newSeverity,
+            state: newState,
+            description: newDescription,
+            owner: newOwner,
+            date: "no errors on date",
+            release: newRelease
+        };
+
+        inputError (lookup[entry]);
+    }
+
     function validate (newEvent) {
         var field;
         var success = true;
 
-        for field in newEvent {
+        for (field in newEvent) {
             // If the field is blank,
-            if (field === '') {
-                inputError (field);
-                errorFlag = false;
+            if (newEvent[field] === '') {
+                lookupError(field);
+                success = false;
             }
         }
 
-        return errorFlag;
+        return success;
     }
 
     function clearErrors (elementList) {
@@ -129,8 +143,8 @@
         clearErrors (entryPanel.children);
             
         // Validate the Entry.
-        if (validate (newEvent)) {
-            addBugToList( newEvent );
+        if (validate (newEntry)) {
+            addBugToList( newEntry );
         }
         
     });

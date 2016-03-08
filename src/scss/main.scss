@@ -251,7 +251,7 @@ textarea {
 
 // Error Handling
 .is-invalid:after {
+    color: red; 
     content: attr(data-msg);
-    background-color: $color3; 
 
 }

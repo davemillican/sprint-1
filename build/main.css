@@ -534,7 +534,7 @@ textarea {
   clear: both; }
 
 .is-invalid:after {
-  content: attr(data-msg);
-  background-color: #ccff66; }
+  color: red;
+  content: attr(data-msg); }
 
 /*# sourceMappingURL=main.css.map */
