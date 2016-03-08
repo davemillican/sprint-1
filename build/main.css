@@ -533,4 +533,8 @@ textarea {
   content: '';
   clear: both; }
 
+.is-invalid:after {
+  content: attr(data-msg);
+  background-color: #ccff66; }
+
 /*# sourceMappingURL=main.css.map */

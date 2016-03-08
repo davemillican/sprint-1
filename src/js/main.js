@@ -71,6 +71,34 @@
         updateStats(storage);
     }
 
+    function inputError (element) {
+        errorElement = element.parentElement;
+        errorElement.classList.add('is-invalid');
+        errorElement.setAttribute ('data-msg','Input is Invalid');
+    }
+
+    function validate (newEvent) {
+        var field;
+        var success = true;
+
+        for field in newEvent {
+            // If the field is blank,
+            if (field === '') {
+                inputError (field);
+                errorFlag = false;
+            }
+        }
+
+        return errorFlag;
+    }
+
+    function clearErrors (elementList) {
+        var count = 0;
+        while (count < elementList.length) {
+            elementList[count].classList.remove('is-invalid');
+            count++;
+        }     
+    }
 
     function displayAll(arr) {
 
@@ -87,15 +115,23 @@
 
 
     submit.addEventListener("click", function (e) {
-        addBugToList({ 
-            title: newTitle.value,
-            severity: newSeverity.value,
-            state: newState.value,
-            description: newDescription.value,
-            owner: newOwner.value,
-            date: new Date().toDateString(),
-            release: newRelease.value
-        });
+
+        newEntry = { 
+                title: newTitle.value,
+                severity: newSeverity.value,
+                state: newState.value,
+                description: newDescription.value,
+                owner: newOwner.value,
+                date: new Date().toDateString(),
+                release: newRelease.value
+            };
+
+        clearErrors (entryPanel.children);
+            
+        // Validate the Entry.
+        if (validate (newEvent)) {
+            addBugToList( newEvent );
+        }
         
     });
 

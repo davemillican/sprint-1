@@ -1,3 +1,4 @@
+
 @import 'normalize';
 @import 'variables';
   
@@ -246,4 +247,11 @@ textarea {
 .cf:before {
     content: '';
     clear:both;
+} 
+
+// Error Handling
+.is-invalid:after {
+    content: attr(data-msg);
+    background-color: $color3; 
+
 }
